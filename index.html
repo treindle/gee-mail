@@ -1,18 +1,101 @@
+
+<!-- Original framework sourced from https://github.com/imencias/gee-mail/blob/master/index.html.-->
+<!-- Additional sourcecode from https://github.com/treindle/gee-mail/network/members -->
 <html>
 	<head>
+		<title>GeeZmail</title>
 		<script src="js/mail-generator.js"></script>
 		<link href="css/style.css" rel="stylesheet" media="screen">
-    <script>
-      window.onload = function(){
-        // ALL OF YOUR JAVASCRIPT CODE SHOULD GO HERE. 
-        // We have to use window.onload so your JavaScript doesn't execute until the page has loaded and all HTML has been downloaded to your browser
-        
-      };
-    </script>
+		<script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+		<script language="javascript" type="text/javascript">
+
+		
+		$(document).ready(function() {
+			displayMail();
+			autoRetrieve();
+
+   			 $(".msgContent").hide();
+
+
+
+		});
+
+	function toggleThis (t) {
+				$(t).next().slideToggle();
+			}
+
+		loadGeeMails();
+		var inboxCount = window.geemails.length;
+
+	function updateInboxCount() {
+			document.getElementById("inboxTotal").innerHTML = inboxCount;
+		}
+
+	function displayMail() {
+			for(key in window.geemails){
+				addMsg( window.geemails[key] );
+			}
+		}
+
+	function autoRetrieve() {
+			var newMsg = getNewMessage();
+			inboxCount++;
+			addMsg( newMsg );
+			window.geemails.push( newMsg );
+			setTimeout( 'autoRetrieve()', 10000 );
+		}
+
+	function addMsg( m ) {
+		    var div1 = document.createElement('div');
+		    div1.className = 'toggleDiv';
+		    div1.onclick = function(){toggleThis( this )};
+		    div1.innerHTML = '<ul class=\"msgList\"><li>' + m.date + '</li><li>' + m.sender + '</li><li>' + m.subject + '</li></ul></div>';
+		    document.getElementById('messages').appendChild(div1);
+
+
+		    var div2 = document.createElement('div');
+		    div2.className = 'msgContent';
+		    div2.style.display = 'none';
+		    div2.innerHTML = m.body + '</div>';
+		    document.getElementById('messages').appendChild(div2);
+
+		    updateInboxCount();
+		    document.body.style.backgroundImage="http://fc07.deviantart.net/fs45/f/2009/072/6/8/_FeelBetter__by__coey_.jpg";
+
+
+		}
+
+		</script>
+
 	</head>
 	<body>
-		<div class="container" id="main">
-			Build Me!
+
+		<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ3CqAVyPZllGZP_Bj1mFfGfgoNupkyZFd8tzm1ErPRAHOXCtMFpw">
+	
+
+		<div class="inbox"><h4>Inbox (<span id="inboxTotal"></span>)</h4></div>
+				
+
+
+			
+			<div class="messagesHeader">
+				<li>Date</li>
+				<li>Sender</li>
+				<li>Subject</li>
+			</div>
+</div>
+			
+
+			<div class="geemails" id="messages"></div>
+		
+				<footer><a href = "http://www.buzzfeed.com/hnigatu/things-to-do-when-youre-feeling-down">
+				Feeling down? Well don't!</a></footer>
+				
+				<div class="memorable"><footer><a href = "https://www.youtube.com/watch?v=4Hqa3TuV59M">
+				Most Memorable Zelda Moments
+
+
+				</a></footer></div>
 		</div>
 	</body>
 </html>
