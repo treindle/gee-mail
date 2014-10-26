@@ -1,0 +1,93 @@
+body {
+    width: auto;
+    height: auto;
+    background-image: url("http://images8.alphacoders.com/417/417283.jpg");
+    background-repeat: no-repeat; 
+    background-position: center;
+    background-attachment: fixed;
+    cursor: url('http://cur.cursors-4u.net/games/images10/gam931.gif'), auto;
+    font-family: "Andale Mono", AndaleMono, monospace;}
+
+.inbox {
+    color: #ffff00;
+    font-size: 18;}
+
+#inboxTotal {
+    font-weight: bold;
+    color: #ffff00; }
+
+
+.geemails {
+    color: #ff00ff;
+    font-size: 16;
+    font-weight: bolder;
+    font-family: "Andale Mono", AndaleMono, monospace;
+    border: 50 solid #FFFF00;
+    overflow: scroll;
+    height: 60%;
+    margin: auto;}
+
+.navigation {
+    margin: 0;
+    line-height: 2em;
+    font-weight: 400;}
+
+
+.messagesHeader {
+    font-size: 18;
+    font-weight: bolder;
+    background-color: none;
+    color: #ff0000;
+    padding: 2 0 5 0;
+    display: inline-table;}
+
+.geemails .messagesHeader ul:first-child {
+    margin: 0 1000 0 0;}
+
+.messagesHeader li{
+    list-style-type: none;
+    margin: 0 220 10 50;
+    display: inline-table;
+    list-style-type: none;}
+
+.toggleDiv {
+    background-color:none;
+    color: #ffff00;
+    padding: 0;
+    cursor: url('http://www.rw-designer.com/cursor-view/38495.png'), auto;
+    border-top: 1px solid #008080;
+    font-weight: bold;
+    margin: 0;}
+
+
+.msgList li.first{
+    list-style-type: none;
+    display: inline-table;
+    color: #ffff00;}
+
+.msgList li{
+    background-color: #000000;
+    padding: 0;
+    margin: 0 100 0 0;
+    overflow: scroll;
+    list-style-type: none;
+    display: inline-table;
+    color: #ffff00;
+}
+
+.memorable {
+    font-weight: bolder;
+    font-size: 20;
+
+}
+
+
+
+
+
+
+
+
+
+
+
